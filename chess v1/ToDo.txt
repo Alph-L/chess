@@ -1,0 +1,79 @@
+OVERVIEW
+Game
+    has a board 
+    place pieces on the board
+    track the current player 
+Moves 
+    move pieces on the board
+    check if the move is valid 
+Board
+    create a board of pointers to pieces (null if no piece on a square)
+    print the board for visuals for the players
+Pieces
+    store the type of piece
+    store the valid moves of the piece
+    store the value of the piece 
+players
+    store the score of the player
+    store the number of moves of the player
+
+
+
+
+
+
+
+
+
+GAME PROGRESSION
+start with a 9 * 9 board, with the top row and right column listing row and column indicaters
+
+player 1 will start by moving a piece by inputting a starting coordinate (letter followed by number) and then an ending coordinate (letter followed by number)
+game will perform checks (if error, request another piece to move)
+    is the move within the bounds of the board? 
+    is the move valid given the type of piece? 
+    is the move valid given what it needs to cross (does it invalidly go over a piece)?
+    does this move take the piece of another player?  
+game will show the movement on the players' board 
+game will check for checkmate (if yes, end game and reveal winner)
+player 2 will move a piece
+repeat steps 4 to 10
+
+delete the board and end the program 
+
+
+
+GAME STATE
+create a visual board for the players to observe
+    bottom left of the board is the start (a1)
+    use # to indicate blank white space
+    use * to indicate blank black space
+    use a letter followed by number to indicate piece and color (ex. b1 = black pawn)
+create a mirror board for computer to track type of piece  
+    use numbers to represent the types of pieces
+    each number corresponds to a specific allowed movement 
+create a mirror board for computer to track which player a piece is
+    use 1 to indicate player 1
+    use 2 to indicate player 2
+
+TRACK PLAYER SCORE
+create player object to track the two players  
+    player 1 and player 2
+    track score
+    track number of moves 
+
+
+
+NOTES
+accessing values of the 2d array, row value comes first, then column value 
+
+
+
+
+
+pawn checkmove directions
+1) check if the pawn has moved up or diagonally validly
+2) check that there's nothing blocking 
+    pawn   
+        if move up one or two spaces: no piece before or at destination
+        if move diagonally: no your piece at destination 
